@@ -50,6 +50,8 @@ services:
     container_name: sql
     image: mcr.microsoft.com/mssql/server
     restart: unless-stopped
+    networks:
+      - taskomask-network
     user: root
     environment:
       SA_PASSWORD: "Your_pass_!@2#33"
@@ -61,8 +63,11 @@ services:
 
   rabbitmq:
     container_name: rabbitmq
-    image: masstransit/rabbitmq
+    image: rabbitmq:3-management
     restart: unless-stopped
+    ports:
+    - "15672:15672"
+    - "5672:5672"
     networks:
       - taskomask-network
     volumes:
@@ -199,7 +204,7 @@ services:
     image: ${DOCKER_REGISTRY-}identity-api
     restart: on-failure
     environment:
-      SQL__Connection: "Server=sql;Database=[DatabaseName];User=sa;Password=Your_password123;"
+      SQL__Connection: "Server=sql;Database=[DatabaseName];User=sa;Password=Your_pass_!@2#33;"
       Redis__Connection: "redis:6379"
       RabbitMQ__Host: "rabbitmq"
     build:

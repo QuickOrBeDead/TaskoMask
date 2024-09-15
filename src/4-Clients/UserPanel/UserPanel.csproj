@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<AssemblyName>TaskoMask.Clients.UserPanel</AssemblyName>
 		<RootNamespace>TaskoMask.Clients.UserPanel</RootNamespace>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..\..</DockerfileContext>
 		<DockerComposeProjectPath>..\..\7-Docker\docker-compose.dcproj</DockerComposeProjectPath>
 		<UserSecretsId>fdd4685f-7b2a-4c80-ac60-b3d2c26c081e</UserSecretsId>
 	</PropertyGroup>
