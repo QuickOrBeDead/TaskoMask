@@ -1,5 +1,4 @@
 FROM nginx:alpine AS base
-USER app
 WORKDIR /usr/share/nginx/html
 EXPOSE 80
 

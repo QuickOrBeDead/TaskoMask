@@ -15,7 +15,7 @@ public static class BusExtensions
     public static void AddInMemoryBus(this IServiceCollection services, Type handlerAssemblyMarkerType)
     {
         //Load all handlers from given assemblies
-        services.AddMediatR(handlerAssemblyMarkerType);
+        services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining(handlerAssemblyMarkerType));
 
         services.AddScoped<IInMemoryBus, InMemoryBus>();
     }
