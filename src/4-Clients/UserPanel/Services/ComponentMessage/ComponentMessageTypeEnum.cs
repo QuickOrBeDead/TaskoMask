@@ -1,5 +1,8 @@
-﻿namespace TaskoMask.Clients.UserPanel.Services.ComponentMessage;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace TaskoMask.Clients.UserPanel.Services.ComponentMessage;
+
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public enum MessageType
 {
     Organization_Added,

@@ -25,6 +25,6 @@ public class RegisterOwnerEndpoint : BaseApiController
     [AllowAnonymous]
     public async Task<Result<CommandResult>> Post([FromBody] RegisterOwnerDto input)
     {
-        return await _inMemoryBus.SendCommand<RegiserOwnerRequest>(new(displayName: input.DisplayName, email: input.Email, password: input.Password));
+        return await InMemoryBus.SendCommand<RegiserOwnerRequest>(new(displayName: input.DisplayName, email: input.Email, password: input.Password));
     }
 }

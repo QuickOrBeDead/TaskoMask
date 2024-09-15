@@ -25,6 +25,6 @@ public class GetOrganizationsByOwnerIdRestEndpoint : BaseApiController
     [Route("organizations")]
     public async Task<Result<IEnumerable<GetOrganizationDto>>> Get()
     {
-        return await _inMemoryBus.SendQuery(new GetOrganizationsByOwnerIdRequest(GetCurrentUserId()));
+        return await InMemoryBus.SendQuery(new GetOrganizationsByOwnerIdRequest(GetCurrentUserId()));
     }
 }

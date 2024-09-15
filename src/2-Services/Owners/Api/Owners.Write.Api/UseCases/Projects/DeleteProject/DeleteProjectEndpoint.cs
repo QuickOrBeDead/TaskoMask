@@ -23,6 +23,6 @@ public class DeleteProjectEndpoint : BaseApiController
     [Route("projects/{id}")]
     public async Task<Result<CommandResult>> Delete(string id)
     {
-        return await _inMemoryBus.SendCommand<DeleteProjectRequest>(new(id));
+        return await InMemoryBus.SendCommand<DeleteProjectRequest>(new(id));
     }
 }

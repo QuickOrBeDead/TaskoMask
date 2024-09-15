@@ -25,6 +25,6 @@ public class GetProjectsByOrganizationIdRestEndpoint : BaseApiController
     [Route("organizations/{organizationId}/projects")]
     public async Task<Result<IEnumerable<GetProjectDto>>> Get(string organizationId)
     {
-        return await _inMemoryBus.SendQuery(new GetProjectsByOrganizationIdRequest(organizationId));
+        return await InMemoryBus.SendQuery(new GetProjectsByOrganizationIdRequest(organizationId));
     }
 }

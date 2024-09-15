@@ -57,13 +57,13 @@ public class Index : BasePageModel
 
     public async Task<IActionResult> OnPost()
     {
-        if (!_validatorService.HasRequestValidCaptchaEntry(Language.English, DisplayMode.SumOfTwoNumbers))
+        if (!_validatorService.HasRequestValidCaptchaEntry())
             ModelState.AddModelError("", ApplicationMessages.Captcha_Is_Not_Valid);
 
         if (!ModelState.IsValid)
             return await LoginFailedAsync();
 
-        var loginRespone = await _inMemoryBus.SendQuery(new UserLoginRequest(Input.UserName, Input.Password, Input.RememberLogin));
+        var loginRespone = await InMemoryBus.SendQuery(new UserLoginRequest(Input.UserName, Input.Password, Input.RememberLogin));
         if (loginRespone.IsSuccess)
             return RedirectToReturnUrl(Input.ReturnUrl);
 

@@ -44,7 +44,7 @@ public class GetCardByIdHandler : BaseQueryHandler, IRequestHandler<GetCardByIdR
         if (card == null)
             throw new ApplicationException(ContractsMessages.Data_Not_exist, DomainMetadata.Card);
 
-        return _mapper.Map<GetCardDto>(card);
+        return Mapper.Map<GetCardDto>(card);
     }
 
     #endregion

@@ -40,7 +40,7 @@ public class UserCollectionFixture : TestsBaseFixture
     {
         UserManager = GetRequiredService<UserManager<User>>();
         SignInManager = GetRequiredService<SignInManager<User>>();
-        SignInManager.Context = new DefaultHttpContext { RequestServices = _serviceProvider };
+        SignInManager.Context = new DefaultHttpContext { RequestServices = ServiceProvider };
         NotificationHandler = GetRequiredService<INotificationHandler>();
         Mapper = GetRequiredService<IMapper>();
 

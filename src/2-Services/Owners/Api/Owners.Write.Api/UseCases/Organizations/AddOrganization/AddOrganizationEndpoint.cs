@@ -25,6 +25,6 @@ public class AddOrganizationEndpoint : BaseApiController
     public async Task<Result<CommandResult>> Post([FromBody] AddOrganizationDto input)
     {
         input.OwnerId = GetCurrentUserId();
-        return await _inMemoryBus.SendCommand<AddOrganizationRequest>(new(ownerId: input.OwnerId, name: input.Name, description: input.Description));
+        return await InMemoryBus.SendCommand<AddOrganizationRequest>(new(ownerId: input.OwnerId, name: input.Name, description: input.Description));
     }
 }

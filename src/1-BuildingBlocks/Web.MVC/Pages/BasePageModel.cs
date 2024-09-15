@@ -5,10 +5,10 @@ namespace TaskoMask.BuildingBlocks.Web.MVC.Pages;
 
 public class BasePageModel : PageModel
 {
-    protected readonly IInMemoryBus _inMemoryBus;
+    protected readonly IInMemoryBus InMemoryBus;
 
     public BasePageModel(IInMemoryBus inMemoryBus)
     {
-        _inMemoryBus = inMemoryBus;
+        InMemoryBus = inMemoryBus;
     }
 }

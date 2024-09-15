@@ -24,6 +24,6 @@ public class GetProjectByIdRestEndpoint : BaseApiController
     [Route("projects/{id}")]
     public async Task<Result<GetProjectDto>> Get(string id)
     {
-        return await _inMemoryBus.SendQuery(new GetProjectByIdRequest(id));
+        return await InMemoryBus.SendQuery(new GetProjectByIdRequest(id));
     }
 }

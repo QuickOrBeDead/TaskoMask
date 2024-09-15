@@ -44,7 +44,7 @@ public class GetProjectByIdHandler : BaseQueryHandler, IRequestHandler<GetProjec
         if (project == null)
             throw new ApplicationException(ContractsMessages.Data_Not_exist, DomainMetadata.Project);
 
-        return _mapper.Map<GetProjectDto>(project);
+        return Mapper.Map<GetProjectDto>(project);
     }
 
     #endregion

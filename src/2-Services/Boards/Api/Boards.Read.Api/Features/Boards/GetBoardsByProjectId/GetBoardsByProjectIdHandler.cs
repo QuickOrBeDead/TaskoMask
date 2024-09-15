@@ -40,7 +40,7 @@ public class GetBoardsByProjectIdHandler : BaseQueryHandler, IRequestHandler<Get
     {
         var boards = await _boardReadDbContext.Boards.AsQueryable().Where(e => e.ProjectId == request.ProjectId).ToListAsync(cancellationToken);
 
-        return _mapper.Map<IEnumerable<GetBoardDto>>(boards);
+        return Mapper.Map<IEnumerable<GetBoardDto>>(boards);
     }
 
     #endregion

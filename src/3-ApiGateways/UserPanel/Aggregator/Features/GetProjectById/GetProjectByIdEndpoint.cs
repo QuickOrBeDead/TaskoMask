@@ -22,6 +22,6 @@ public class GetProjectByIdEndpoint : BaseApiController
     [Route("projects/{id}")]
     public async Task<Result<ProjectDetailsViewModel>> Get(string id)
     {
-        return await _inMemoryBus.SendQuery(new GetProjectByIdRequest(id));
+        return await InMemoryBus.SendQuery(new GetProjectByIdRequest(id));
     }
 }

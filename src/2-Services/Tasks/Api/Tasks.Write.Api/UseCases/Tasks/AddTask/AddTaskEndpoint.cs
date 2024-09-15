@@ -24,7 +24,7 @@ public class AddTaskEndpoint : BaseApiController
     [Route("tasks")]
     public async Task<Result<CommandResult>> Post([FromBody] AddTaskDto input)
     {
-        return await _inMemoryBus.SendCommand<AddTaskRequest>(
+        return await InMemoryBus.SendCommand<AddTaskRequest>(
             new(cardId: input.CardId, boardId: input.BoardId, title: input.Title, description: input.Description)
         );
     }

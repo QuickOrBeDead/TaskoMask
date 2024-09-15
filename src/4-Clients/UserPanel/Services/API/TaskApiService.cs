@@ -28,7 +28,7 @@ public class TaskApiService : BaseApiService
     public async Task<Result<GetTaskDto>> GetAsync(string id)
     {
         var url = $"/tasks/{id}";
-        return await _httpClientService.GetAsync<GetTaskDto>(url);
+        return await HttpClientService.GetAsync<GetTaskDto>(url);
     }
 
     /// <summary>
@@ -37,7 +37,7 @@ public class TaskApiService : BaseApiService
     public async Task<Result<TaskDetailsViewModel>> GetDetailsAsync(string id)
     {
         var url = $"/tasks/{id}/details";
-        return await _httpClientService.GetAsync<TaskDetailsViewModel>(url);
+        return await HttpClientService.GetAsync<TaskDetailsViewModel>(url);
     }
 
     /// <summary>
@@ -46,7 +46,7 @@ public class TaskApiService : BaseApiService
     public async Task<Result<CommandResult>> AddAsync(AddTaskDto input)
     {
         var url = $"/tasks";
-        return await _httpClientService.PostAsync<CommandResult>(url, input);
+        return await HttpClientService.PostAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ public class TaskApiService : BaseApiService
     public async Task<Result<CommandResult>> UpdateAsync(string id, UpdateTaskDto input)
     {
         var url = $"/tasks/{id}";
-        return await _httpClientService.PutAsync<CommandResult>(url, input);
+        return await HttpClientService.PutAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -64,7 +64,7 @@ public class TaskApiService : BaseApiService
     public async Task<Result<CommandResult>> MoveTaskToAnotherCardAsync(string taskId, string cardId)
     {
         var url = $"/tasks/{taskId}/moveto/{cardId}";
-        return await _httpClientService.PutAsync<CommandResult>(url);
+        return await HttpClientService.PutAsync<CommandResult>(url);
     }
 
     /// <summary>
@@ -73,7 +73,7 @@ public class TaskApiService : BaseApiService
     public async Task<Result<CommandResult>> DeleteAsync(string id)
     {
         var url = $"/tasks/{id}";
-        return await _httpClientService.DeleteAsync<CommandResult>(url);
+        return await HttpClientService.DeleteAsync<CommandResult>(url);
     }
 
     #endregion

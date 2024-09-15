@@ -23,6 +23,6 @@ public class DeleteCardEndpoint : BaseApiController
     [Route("cards/{id}")]
     public async Task<Result<CommandResult>> Delete(string id)
     {
-        return await _inMemoryBus.SendCommand<DeleteCardRequest>(new(id));
+        return await InMemoryBus.SendCommand<DeleteCardRequest>(new(id));
     }
 }

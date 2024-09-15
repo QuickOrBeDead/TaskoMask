@@ -5,10 +5,10 @@ namespace TaskoMask.Clients.UserPanel.Services.API;
 
 public abstract class BaseApiService
 {
-    protected readonly IHttpClientService _httpClientService;
+    protected readonly IHttpClientService HttpClientService;
 
     public BaseApiService(IHttpClientService httpClientService, string clientName = MagicKey.PROTECTED_APIGATEWAY_CLIENT)
     {
-        _httpClientService = httpClientService.WithNamedClient(clientName);
+        HttpClientService = httpClientService.WithNamedClient(clientName);
     }
 }

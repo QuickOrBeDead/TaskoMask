@@ -15,7 +15,7 @@ public class TaskAddedConsumer : BaseConsumer<TaskAdded>
 {
     private readonly GetCardByIdGrpcServiceClient _getCardByIdGrpcServiceClient;
     private readonly TaskReadDbContext _taskReadDbContext;
-    protected readonly IMapper _mapper;
+    private readonly IMapper _mapper;
 
     public TaskAddedConsumer(
         IInMemoryBus inMemoryBus,

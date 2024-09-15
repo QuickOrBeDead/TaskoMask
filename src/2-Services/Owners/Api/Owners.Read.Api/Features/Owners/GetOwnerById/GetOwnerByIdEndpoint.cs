@@ -24,6 +24,6 @@ public class GetOwnerByIdEndpoint : BaseApiController
     [Route("owner")]
     public async Task<Result<GetOwnerDto>> Get()
     {
-        return await _inMemoryBus.SendQuery(new GetOwnerByIdRequest(GetCurrentUserId()));
+        return await InMemoryBus.SendQuery(new GetOwnerByIdRequest(GetCurrentUserId()));
     }
 }

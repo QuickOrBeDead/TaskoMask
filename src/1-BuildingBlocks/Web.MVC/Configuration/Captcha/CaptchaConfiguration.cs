@@ -14,7 +14,6 @@ public static class CaptchaConfiguration
                     .UseCookieStorageProvider(SameSiteMode.Strict)
                     .AbsoluteExpiration(minutes: 7)
                     .ShowThousandsSeparators(false)
-                    .WithNoise(pixelsDensity: 25, linesCount: 3)
                     .WithEncryptionKey("CaptchaEncryptionKey")
                     .InputNames(
                         new DNTCaptchaComponent

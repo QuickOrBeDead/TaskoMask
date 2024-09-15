@@ -23,6 +23,6 @@ public class MoveTaskToAnotherCardEndpoint : BaseApiController
     [Route("tasks/{taskId}/moveto/{cardId}")]
     public async Task<Result<CommandResult>> Put(string taskId, string cardId)
     {
-        return await _inMemoryBus.SendCommand<MoveTaskToAnotherCardRequest>(new(taskId, cardId));
+        return await InMemoryBus.SendCommand<MoveTaskToAnotherCardRequest>(new(taskId, cardId));
     }
 }

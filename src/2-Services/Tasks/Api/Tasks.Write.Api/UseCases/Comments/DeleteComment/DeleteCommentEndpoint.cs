@@ -23,6 +23,6 @@ public class DeleteCommentEndpoint : BaseApiController
     [Route("comments/{id}")]
     public async Task<Result<CommandResult>> Delete(string id)
     {
-        return await _inMemoryBus.SendCommand<DeleteCommentRequest>(new(id));
+        return await InMemoryBus.SendCommand<DeleteCommentRequest>(new(id));
     }
 }

@@ -24,6 +24,6 @@ public class GetCommentByIdRestEndpoint : BaseApiController
     [Route("comments/{id}")]
     public async Task<Result<GetCommentDto>> Get(string id)
     {
-        return await _inMemoryBus.SendQuery(new GetCommentByIdRequest(id));
+        return await InMemoryBus.SendQuery(new GetCommentByIdRequest(id));
     }
 }

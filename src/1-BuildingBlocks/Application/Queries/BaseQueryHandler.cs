@@ -9,7 +9,7 @@ public abstract class BaseQueryHandler
 {
     #region Fields
 
-    protected readonly IMapper _mapper;
+    protected readonly IMapper Mapper;
 
     #endregion
 
@@ -19,7 +19,7 @@ public abstract class BaseQueryHandler
 
     protected BaseQueryHandler(IMapper mapper)
     {
-        _mapper = mapper;
+        Mapper = mapper;
     }
 
     #endregion

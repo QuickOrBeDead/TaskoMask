@@ -25,6 +25,6 @@ public class GetTasksByCardIdRestEndpoint : BaseApiController
     [Route("cards/{cardId}/tasks")]
     public async Task<Result<IEnumerable<GetTaskDto>>> Get(string cardId)
     {
-        return await _inMemoryBus.SendQuery(new GetTasksByCardIdRequest(cardId));
+        return await InMemoryBus.SendQuery(new GetTasksByCardIdRequest(cardId));
     }
 }

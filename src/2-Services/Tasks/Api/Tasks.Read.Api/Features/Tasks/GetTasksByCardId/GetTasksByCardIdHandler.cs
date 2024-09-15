@@ -40,7 +40,7 @@ public class GetTasksByCardIdHandler : BaseQueryHandler, IRequestHandler<GetTask
     {
         var tasks = await _taskReadDbContext.Tasks.AsQueryable().Where(e => e.CardId == request.CardId).ToListAsync(cancellationToken);
 
-        return _mapper.Map<IEnumerable<GetTaskDto>>(tasks);
+        return Mapper.Map<IEnumerable<GetTaskDto>>(tasks);
     }
 
     #endregion

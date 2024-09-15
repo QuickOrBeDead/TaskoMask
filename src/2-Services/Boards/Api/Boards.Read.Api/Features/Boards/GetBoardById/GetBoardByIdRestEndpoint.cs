@@ -23,6 +23,6 @@ public class GetBoardByIdRestEndpoint : BaseApiController
     [Route("boards/{id}")]
     public async Task<Result<GetBoardDto>> Get(string id)
     {
-        return await _inMemoryBus.SendQuery(new GetBoardByIdRequest(id));
+        return await InMemoryBus.SendQuery(new GetBoardByIdRequest(id));
     }
 }

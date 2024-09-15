@@ -25,6 +25,6 @@ public class GetActivitiesByTaskIdRestEndpoint : BaseApiController
     [Route("tasks/{taskId}/activities")]
     public async Task<Result<IEnumerable<GetActivityDto>>> Get(string taskId)
     {
-        return await _inMemoryBus.SendQuery(new GetActivitiesByTaskIdRequest(taskId));
+        return await InMemoryBus.SendQuery(new GetActivitiesByTaskIdRequest(taskId));
     }
 }

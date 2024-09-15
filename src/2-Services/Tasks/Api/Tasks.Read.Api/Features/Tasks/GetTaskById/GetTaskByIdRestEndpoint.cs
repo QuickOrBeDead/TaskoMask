@@ -24,6 +24,6 @@ public class GetTaskByIdRestEndpoint : BaseApiController
     [Route("tasks/{id}")]
     public async Task<Result<GetTaskDto>> Get(string id)
     {
-        return await _inMemoryBus.SendQuery(new GetTaskByIdRequest(id));
+        return await InMemoryBus.SendQuery(new GetTaskByIdRequest(id));
     }
 }

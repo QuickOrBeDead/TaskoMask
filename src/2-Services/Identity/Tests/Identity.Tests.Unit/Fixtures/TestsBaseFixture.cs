@@ -84,13 +84,13 @@ public abstract class TestsBaseFixture : UnitTestsBase
             .Returns(args =>
             {
                 var user = (User)args[0];
-                var UserLoginInfo = (UserLoginInfo)args[1];
+                var userLoginInfo = (UserLoginInfo)args[1];
                 var userlogin = new UserLogin
                 {
                     UserId = user.Id,
-                    LoginProvider = UserLoginInfo.LoginProvider,
-                    ProviderDisplayName = UserLoginInfo.ProviderDisplayName,
-                    ProviderKey = UserLoginInfo.ProviderKey,
+                    LoginProvider = userLoginInfo.LoginProvider,
+                    ProviderDisplayName = userLoginInfo.ProviderDisplayName,
+                    ProviderKey = userLoginInfo.ProviderKey,
                 };
                 TestUserLogins.Add(userlogin);
                 return new TestIdentityResult(true);

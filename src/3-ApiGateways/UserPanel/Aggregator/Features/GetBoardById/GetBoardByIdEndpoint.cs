@@ -22,6 +22,6 @@ public class GetBoardByIdEndpoint : BaseApiController
     [Route("boards/{id}")]
     public async Task<Result<BoardDetailsViewModel>> Get(string id)
     {
-        return await _inMemoryBus.SendQuery(new GetBoardByIdRequest(id));
+        return await InMemoryBus.SendQuery(new GetBoardByIdRequest(id));
     }
 }

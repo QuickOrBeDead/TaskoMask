@@ -44,9 +44,9 @@ public class CommandResultHandler
     public CommandResultHandler ShowToast(IToastService toastService)
     {
         if (result.IsSuccess)
-            toastService.ShowSuccess(result.Value.Message, result.Message);
+            toastService.ShowSuccess(result.Value.Message);
         else
-            toastService.ShowError(result.Errors.ParseToFragment(), result.Message);
+            toastService.ShowError(result.Errors.ParseToFragment());
         return this;
     }
 
@@ -56,7 +56,7 @@ public class CommandResultHandler
     public CommandResultHandler ShowErrorToast(IToastService toastService)
     {
         if (!result.IsSuccess)
-            toastService.ShowError(result.Errors.ParseToFragment(), result.Message);
+            toastService.ShowError(result.Errors.ParseToFragment());
         return this;
     }
 

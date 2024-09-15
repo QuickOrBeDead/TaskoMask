@@ -46,7 +46,7 @@ public class GetOrganizationByIdHandler : BaseQueryHandler, IRequestHandler<GetO
         if (organization == null)
             throw new ApplicationException(ContractsMessages.Data_Not_exist, DomainMetadata.Organization);
 
-        return _mapper.Map<GetOrganizationDto>(organization);
+        return Mapper.Map<GetOrganizationDto>(organization);
     }
 
     #endregion

@@ -40,7 +40,7 @@ public class GetProjectsByOrganizationIdHandler : BaseQueryHandler, IRequestHand
     {
         var projects = await _ownerReadDbContext.Projects.AsQueryable().Where(o => o.OrganizationId == request.OrganizationId).ToListAsync();
 
-        return _mapper.Map<IEnumerable<GetProjectDto>>(projects);
+        return Mapper.Map<IEnumerable<GetProjectDto>>(projects);
     }
 
     #endregion

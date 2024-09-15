@@ -24,6 +24,6 @@ public class AddCardEndpoint : BaseApiController
     [Route("cards")]
     public async Task<Result<CommandResult>> Add([FromBody] AddCardDto input)
     {
-        return await _inMemoryBus.SendCommand<AddCardRequest>(new(boardId: input.BoardId, name: input.Name, type: input.Type));
+        return await InMemoryBus.SendCommand<AddCardRequest>(new(boardId: input.BoardId, name: input.Name, type: input.Type));
     }
 }

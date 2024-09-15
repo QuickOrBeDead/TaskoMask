@@ -19,7 +19,7 @@ public class OwnerProfileUpdatedConsumer : BaseConsumer<OwnerProfileUpdated>
     public override async Task ConsumeMessage(ConsumeContext<OwnerProfileUpdated> context)
     {
         var registerUser = new UpdateUserRequest(context.Message.OldEmail, context.Message.NewEmail);
-        var result = await _inMemoryBus.SendCommand(registerUser);
+        var result = await InMemoryBus.SendCommand(registerUser);
         if (!result.IsSuccess)
             throw new MessageConsumerFaultException(result.Message); // Cause to publish Fault<OwnerProfileUpdated> message
     }

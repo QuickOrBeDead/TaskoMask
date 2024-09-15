@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using TaskoMask.BuildingBlocks.Contracts.Resources;
 
 namespace TaskoMask.BuildingBlocks.Contracts.Enums;
@@ -6,6 +7,7 @@ namespace TaskoMask.BuildingBlocks.Contracts.Enums;
 /// <summary>
 ///
 /// </summary>
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public enum BoardCardType
 {
     [Display(Name = nameof(ContractsMetadata.CardType_Backlog), ResourceType = typeof(ContractsMetadata))]

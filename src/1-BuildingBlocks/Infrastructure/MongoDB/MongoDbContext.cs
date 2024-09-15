@@ -10,9 +10,9 @@ public abstract class MongoDbContext
 {
     #region Fields
 
-    protected readonly MongoDbOptions _mongoDbOptions;
-    protected readonly IMongoDatabase _database;
-    protected readonly IMongoClient _client;
+    private readonly MongoDbOptions _mongoDbOptions;
+    private readonly IMongoDatabase _database;
+    private readonly IMongoClient _client;
 
     #endregion
 

@@ -44,7 +44,7 @@ public class GetTaskByIdHandler : BaseQueryHandler, IRequestHandler<GetTaskByIdR
         if (task == null)
             throw new ApplicationException(ContractsMessages.Data_Not_exist, DomainMetadata.Task);
 
-        return _mapper.Map<GetTaskDto>(task);
+        return Mapper.Map<GetTaskDto>(task);
     }
 
     #endregion

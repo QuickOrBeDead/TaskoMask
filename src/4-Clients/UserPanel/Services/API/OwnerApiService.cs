@@ -29,7 +29,7 @@ public class OwnerApiService : BaseApiService
     public async Task<Result<GetOwnerDto>> GetAsync()
     {
         var url = $"/owners-read/owner";
-        return await _httpClientService.GetAsync<GetOwnerDto>(url);
+        return await HttpClientService.GetAsync<GetOwnerDto>(url);
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ public class OwnerApiService : BaseApiService
         var url = $"/owners-write/owner";
 
         //because this api is anonymous (see AddHttpServices Method in HostingExtensions class)
-        _httpClientService.SetHttpClient(MagicKey.PUBLIC_APIGATEWAY_CLIENT);
+        HttpClientService.SetHttpClient(MagicKey.PUBLIC_APIGATEWAY_CLIENT);
 
-        return await _httpClientService.PostAsync<CommandResult>(url, input);
+        return await HttpClientService.PostAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -51,7 +51,7 @@ public class OwnerApiService : BaseApiService
     public async Task<Result<CommandResult>> UpdateProfileAsync(UpdateOwnerProfileDto input)
     {
         var url = $"/owners-write/owner";
-        return await _httpClientService.PutAsync<CommandResult>(url, input);
+        return await HttpClientService.PutAsync<CommandResult>(url, input);
     }
 
     #endregion

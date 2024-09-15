@@ -87,7 +87,7 @@ public class GetOrganizationsByOwnerIdHandler
     /// </summary>
     private GetOrganizationDto MapToOrganization(GetOrganizationGrpcResponse organizationGrpcResponse)
     {
-        return _mapper.Map<GetOrganizationDto>(organizationGrpcResponse);
+        return Mapper.Map<GetOrganizationDto>(organizationGrpcResponse);
     }
 
     /// <summary>
@@ -102,7 +102,7 @@ public class GetOrganizationsByOwnerIdHandler
         );
 
         await foreach (var response in projectsGrpcCall.ResponseStream.ReadAllAsync())
-            projects.Add(_mapper.Map<GetProjectDto>(response));
+            projects.Add(Mapper.Map<GetProjectDto>(response));
 
         return projects;
     }
@@ -118,7 +118,7 @@ public class GetOrganizationsByOwnerIdHandler
         );
 
         await foreach (var response in boardsGrpcCall.ResponseStream.ReadAllAsync())
-            boards.Add(_mapper.Map<GetBoardDto>(response));
+            boards.Add(Mapper.Map<GetBoardDto>(response));
 
         return boards;
     }

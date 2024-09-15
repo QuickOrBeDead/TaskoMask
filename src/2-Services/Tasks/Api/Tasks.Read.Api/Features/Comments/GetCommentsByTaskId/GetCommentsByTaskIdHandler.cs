@@ -40,7 +40,7 @@ public class GetCommentsByTaskIdHandler : BaseQueryHandler, IRequestHandler<GetC
     {
         var comments = await _taskReadDbContext.Comments.AsQueryable().Where(e => e.TaskId == request.TaskId).ToListAsync(cancellationToken);
 
-        return _mapper.Map<IEnumerable<GetCommentDto>>(comments);
+        return Mapper.Map<IEnumerable<GetCommentDto>>(comments);
     }
 
     #endregion

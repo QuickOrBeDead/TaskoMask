@@ -24,7 +24,7 @@ public class AddProjectEndpoint : BaseApiController
     [Route("projects")]
     public async Task<Result<CommandResult>> Add([FromBody] AddProjectDto input)
     {
-        return await _inMemoryBus.SendCommand<AddProjectRequest>(
+        return await InMemoryBus.SendCommand<AddProjectRequest>(
             new(organizationId: input.OrganizationId, name: input.Name, description: input.Description)
         );
     }

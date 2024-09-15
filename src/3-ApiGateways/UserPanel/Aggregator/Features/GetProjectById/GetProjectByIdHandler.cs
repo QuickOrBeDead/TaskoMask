@@ -67,7 +67,7 @@ public class GetProjectByIdHandler : BaseQueryHandler, IRequestHandler<GetProjec
             cancellationToken: cancellationToken
         );
 
-        return _mapper.Map<GetProjectDto>(projectGrpcResponse);
+        return Mapper.Map<GetProjectDto>(projectGrpcResponse);
     }
 
     /// <summary>
@@ -83,7 +83,7 @@ public class GetProjectByIdHandler : BaseQueryHandler, IRequestHandler<GetProjec
         );
 
         await foreach (var response in boardsGrpcCall.ResponseStream.ReadAllAsync())
-            boards.Add(_mapper.Map<GetBoardDto>(response));
+            boards.Add(Mapper.Map<GetBoardDto>(response));
 
         return boards;
     }

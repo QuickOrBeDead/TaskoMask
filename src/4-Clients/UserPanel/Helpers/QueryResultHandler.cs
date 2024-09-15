@@ -32,16 +32,16 @@ public class QueryResultHandler<T>
     public QueryResultHandler<T> ShowToas(IToastService toastService)
     {
         if (result.IsSuccess)
-            toastService.ShowSuccess(result.Message, "");
+            toastService.ShowSuccess(result.Message);
         else
-            toastService.ShowError(result.Errors.ParseToFragment(), result.Message);
+            toastService.ShowError(result.Errors.ParseToFragment());
         return this;
     }
 
     public QueryResultHandler<T> ShowErrorToast(IToastService toastService)
     {
         if (!result.IsSuccess)
-            toastService.ShowError(result.Errors.ParseToFragment(), result.Message);
+            toastService.ShowError(result.Errors.ParseToFragment());
         return this;
     }
 

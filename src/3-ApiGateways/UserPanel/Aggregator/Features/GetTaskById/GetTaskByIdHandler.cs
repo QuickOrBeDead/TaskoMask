@@ -73,7 +73,7 @@ public class GetTaskByIdHandler : BaseQueryHandler, IRequestHandler<GetTaskByIdR
             cancellationToken: cancellationToken
         );
 
-        return _mapper.Map<GetTaskDto>(projectGrpcResponse);
+        return Mapper.Map<GetTaskDto>(projectGrpcResponse);
     }
 
     /// <summary>
@@ -89,7 +89,7 @@ public class GetTaskByIdHandler : BaseQueryHandler, IRequestHandler<GetTaskByIdR
         );
 
         await foreach (var response in commentsGrpcCall.ResponseStream.ReadAllAsync())
-            comments.Add(_mapper.Map<GetCommentDto>(response));
+            comments.Add(Mapper.Map<GetCommentDto>(response));
 
         return comments;
     }
@@ -107,7 +107,7 @@ public class GetTaskByIdHandler : BaseQueryHandler, IRequestHandler<GetTaskByIdR
         );
 
         await foreach (var response in activitiesGrpcCall.ResponseStream.ReadAllAsync())
-            activities.Add(_mapper.Map<GetActivityDto>(response));
+            activities.Add(Mapper.Map<GetActivityDto>(response));
 
         return activities;
     }

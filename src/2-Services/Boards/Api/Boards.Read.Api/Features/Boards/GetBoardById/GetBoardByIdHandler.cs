@@ -44,7 +44,7 @@ public class GetBoardByIdHandler : BaseQueryHandler, IRequestHandler<GetBoardByI
         if (board == null)
             throw new ApplicationException(ContractsMessages.Data_Not_exist, DomainMetadata.Board);
 
-        return _mapper.Map<GetBoardDto>(board);
+        return Mapper.Map<GetBoardDto>(board);
     }
 
     #endregion

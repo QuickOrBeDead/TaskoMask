@@ -27,7 +27,7 @@ namespace TaskoMask.BuildingBlocks.Test.TestBase;
 /// </summary>
 public abstract class IntegrationTestsBase : IDisposable
 {
-    protected readonly IServiceProvider _serviceProvider;
+    protected readonly IServiceProvider ServiceProvider;
 
     /// <summary>
     ///
@@ -35,7 +35,7 @@ public abstract class IntegrationTestsBase : IDisposable
     /// <param name="dbNameSuffix">To make a unique database for each fixture</param>
     public IntegrationTestsBase(string dbNameSuffix)
     {
-        _serviceProvider = GetServiceProvider(dbNameSuffix);
+        ServiceProvider = GetServiceProvider(dbNameSuffix);
         InitialDatabase();
     }
 
@@ -59,7 +59,7 @@ public abstract class IntegrationTestsBase : IDisposable
     /// </summary>
     protected T GetRequiredService<T>()
     {
-        return _serviceProvider.GetRequiredService<T>();
+        return ServiceProvider.GetRequiredService<T>();
     }
 
     /// <summary>

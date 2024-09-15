@@ -44,7 +44,7 @@ public class GetOwnerByIdHandler : BaseQueryHandler, IRequestHandler<GetOwnerByI
         if (owner == null)
             throw new ApplicationException(ContractsMessages.Data_Not_exist, DomainMetadata.Owner);
 
-        return _mapper.Map<GetOwnerDto>(owner);
+        return Mapper.Map<GetOwnerDto>(owner);
     }
 
     #endregion

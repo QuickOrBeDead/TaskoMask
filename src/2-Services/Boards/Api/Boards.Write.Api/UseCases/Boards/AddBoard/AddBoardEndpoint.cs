@@ -24,6 +24,6 @@ public class AddBoardEndpoint : BaseApiController
     [Route("boards")]
     public async Task<Result<CommandResult>> Post([FromBody] AddBoardDto input)
     {
-        return await _inMemoryBus.SendCommand<AddBoardRequest>(new(projectId: input.ProjectId, name: input.Name, description: input.Description));
+        return await InMemoryBus.SendCommand<AddBoardRequest>(new(projectId: input.ProjectId, name: input.Name, description: input.Description));
     }
 }

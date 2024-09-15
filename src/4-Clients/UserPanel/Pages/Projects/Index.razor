@@ -44,7 +44,7 @@
     {
         var projectDetailsListResult = await ProjectApiService.GetDetailsAsync(ProjectId);
         if (!projectDetailsListResult.IsSuccess)
-            ToastService.ShowError(projectDetailsListResult.Errors.ParseToFragment(), projectDetailsListResult.Message);
+            ToastService.ShowError(projectDetailsListResult.Errors.ParseToFragment());
         else
             Model = projectDetailsListResult.Value;
     }

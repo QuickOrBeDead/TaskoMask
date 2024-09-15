@@ -44,7 +44,7 @@ public class GetCommentByIdHandler : BaseQueryHandler, IRequestHandler<GetCommen
         if (comment == null)
             throw new ApplicationException(ContractsMessages.Data_Not_exist, DomainMetadata.Comment);
 
-        return _mapper.Map<GetCommentDto>(comment);
+        return Mapper.Map<GetCommentDto>(comment);
     }
 
     #endregion

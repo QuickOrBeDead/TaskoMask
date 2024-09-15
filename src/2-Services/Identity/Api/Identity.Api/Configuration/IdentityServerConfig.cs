@@ -1,6 +1,7 @@
 ﻿using Duende.IdentityServer;
 using Duende.IdentityServer.Models;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TaskoMask.Services.Identity.Api.Configuration;
 
@@ -47,6 +48,7 @@ internal static class IdentityServerConfig
 /// <summary>
 ///
 /// </summary>
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 internal static class ApiResourcesConfig
 {
     public static ApiResource Owners_Api =>
@@ -98,6 +100,7 @@ internal static class ClientsConfig
 /// <summary>
 ///
 /// </summary>
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 internal static class ApiScopesConfig
 {
     public static ApiScope Owners_Read => new(name: "owners.read", displayName: "Owners Read APIs");

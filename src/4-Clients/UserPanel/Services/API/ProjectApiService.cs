@@ -29,7 +29,7 @@ public class ProjectApiService : BaseApiService
     public async Task<Result<GetProjectDto>> GetAsync(string id)
     {
         var url = $"/owners-read/projects/{id}";
-        return await _httpClientService.GetAsync<GetProjectDto>(url);
+        return await HttpClientService.GetAsync<GetProjectDto>(url);
     }
 
     /// <summary>
@@ -38,7 +38,7 @@ public class ProjectApiService : BaseApiService
     public async Task<Result<ProjectDetailsViewModel>> GetDetailsAsync(string id)
     {
         var url = $"/aggregator/projects/{id}";
-        return await _httpClientService.GetAsync<ProjectDetailsViewModel>(url);
+        return await HttpClientService.GetAsync<ProjectDetailsViewModel>(url);
     }
 
     /// <summary>
@@ -47,7 +47,7 @@ public class ProjectApiService : BaseApiService
     public async Task<Result<IEnumerable<SelectListItem>>> GetSelectListItemsAsync(string organizationId)
     {
         var url = $"/owners-read/organizations/{organizationId}/projects";
-        var projectsResult = await _httpClientService.GetAsync<IEnumerable<GetProjectDto>>(url);
+        var projectsResult = await HttpClientService.GetAsync<IEnumerable<GetProjectDto>>(url);
         if (!projectsResult.IsSuccess)
             return Result.Failure<IEnumerable<SelectListItem>>(projectsResult.Errors, projectsResult.Message);
 
@@ -61,7 +61,7 @@ public class ProjectApiService : BaseApiService
     public async Task<Result<CommandResult>> AddAsync(AddProjectDto input)
     {
         var url = $"/owners-write/projects";
-        return await _httpClientService.PostAsync<CommandResult>(url, input);
+        return await HttpClientService.PostAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -70,7 +70,7 @@ public class ProjectApiService : BaseApiService
     public async Task<Result<CommandResult>> UpdateAsync(string id, UpdateProjectDto input)
     {
         var url = $"/owners-write/projects/{id}";
-        return await _httpClientService.PutAsync<CommandResult>(url, input);
+        return await HttpClientService.PutAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -79,7 +79,7 @@ public class ProjectApiService : BaseApiService
     public async Task<Result<CommandResult>> DeleteAsync(string id)
     {
         var url = $"/owners-write/projects/{id}";
-        return await _httpClientService.DeleteAsync<CommandResult>(url);
+        return await HttpClientService.DeleteAsync<CommandResult>(url);
     }
 
     #endregion

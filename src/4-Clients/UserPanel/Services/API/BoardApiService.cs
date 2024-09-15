@@ -30,7 +30,7 @@ public class BoardApiService : BaseApiService
     public async Task<Result<GetBoardDto>> GetAsync(string id)
     {
         var url = $"/boards/{id}";
-        return await _httpClientService.GetAsync<GetBoardDto>(url);
+        return await HttpClientService.GetAsync<GetBoardDto>(url);
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ public class BoardApiService : BaseApiService
     public async Task<Result<BoardDetailsViewModel>> GetDetailsAsync(string id)
     {
         var url = $"/boards/{id}/details";
-        return await _httpClientService.GetAsync<BoardDetailsViewModel>(url);
+        return await HttpClientService.GetAsync<BoardDetailsViewModel>(url);
     }
 
     /// <summary>
@@ -48,7 +48,7 @@ public class BoardApiService : BaseApiService
     public async Task<Result<CommandResult>> AddAsync(AddBoardDto input)
     {
         var url = $"/boards";
-        return await _httpClientService.PostAsync<CommandResult>(url, input);
+        return await HttpClientService.PostAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -57,7 +57,7 @@ public class BoardApiService : BaseApiService
     public async Task<Result<CommandResult>> UpdateAsync(string id, UpdateBoardDto input)
     {
         var url = $"/boards/{id}";
-        return await _httpClientService.PutAsync<CommandResult>(url, input);
+        return await HttpClientService.PutAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -66,7 +66,7 @@ public class BoardApiService : BaseApiService
     public async Task<Result<CommandResult>> DeleteAsync(string id)
     {
         var url = $"/boards/{id}";
-        return await _httpClientService.DeleteAsync<CommandResult>(url);
+        return await HttpClientService.DeleteAsync<CommandResult>(url);
     }
 
     #endregion

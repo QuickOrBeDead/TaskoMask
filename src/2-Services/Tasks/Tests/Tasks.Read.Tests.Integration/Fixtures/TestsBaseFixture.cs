@@ -26,7 +26,7 @@ public abstract class TestsBaseFixture : IntegrationTestsBase
     /// </summary>
     public override void InitialDatabase()
     {
-        _serviceProvider.InitialDatabase();
+        ServiceProvider.InitialDatabase();
     }
 
     /// <summary>
@@ -34,7 +34,7 @@ public abstract class TestsBaseFixture : IntegrationTestsBase
     /// </summary>
     public override void DropDatabase()
     {
-        _serviceProvider.DropDatabase();
+        ServiceProvider.DropDatabase();
     }
 
     /// <summary>

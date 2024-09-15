@@ -24,6 +24,6 @@ public class GetCardByIdRestEndpoint : BaseApiController
     [Route("cards/{id}")]
     public async Task<Result<GetCardDto>> Get(string id)
     {
-        return await _inMemoryBus.SendQuery(new GetCardByIdRequest(id));
+        return await InMemoryBus.SendQuery(new GetCardByIdRequest(id));
     }
 }

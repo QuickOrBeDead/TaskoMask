@@ -72,7 +72,7 @@ public class GetBoardByIdHandler : BaseQueryHandler, IRequestHandler<GetBoardByI
             cancellationToken: cancellationToken
         );
 
-        return _mapper.Map<GetBoardDto>(boardGrpcResponse);
+        return Mapper.Map<GetBoardDto>(boardGrpcResponse);
     }
 
     /// <summary>
@@ -106,7 +106,7 @@ public class GetBoardByIdHandler : BaseQueryHandler, IRequestHandler<GetBoardByI
         var tasksGrpcCall = _getTasksByCardIdGrpcServiceClient.Handle(new GetTasksByCardIdGrpcRequest { CardId = cardId });
 
         await foreach (var response in tasksGrpcCall.ResponseStream.ReadAllAsync())
-            tasks.Add(_mapper.Map<GetTaskDto>(response));
+            tasks.Add(Mapper.Map<GetTaskDto>(response));
 
         return tasks;
     }
@@ -116,7 +116,7 @@ public class GetBoardByIdHandler : BaseQueryHandler, IRequestHandler<GetBoardByI
     /// </summary>
     private GetCardDto MapToCard(GetCardGrpcResponse cardGrpcResponse)
     {
-        return _mapper.Map<GetCardDto>(cardGrpcResponse);
+        return Mapper.Map<GetCardDto>(cardGrpcResponse);
     }
 
     #endregion

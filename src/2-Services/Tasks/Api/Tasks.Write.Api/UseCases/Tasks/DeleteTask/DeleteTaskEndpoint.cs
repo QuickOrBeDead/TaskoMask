@@ -23,6 +23,6 @@ public class DeleteTaskEndpoint : BaseApiController
     [Route("tasks/{id}")]
     public async Task<Result<CommandResult>> Delete(string id)
     {
-        return await _inMemoryBus.SendCommand<DeleteTaskRequest>(new(id));
+        return await InMemoryBus.SendCommand<DeleteTaskRequest>(new(id));
     }
 }

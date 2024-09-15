@@ -29,7 +29,7 @@ public class OrganizationApiService : BaseApiService
     public async Task<Result<GetOrganizationDto>> GetAsync(string id)
     {
         var url = $"/owners-read/organizations/{id}";
-        return await _httpClientService.GetAsync<GetOrganizationDto>(url);
+        return await HttpClientService.GetAsync<GetOrganizationDto>(url);
     }
 
     /// <summary>
@@ -38,7 +38,7 @@ public class OrganizationApiService : BaseApiService
     public async Task<Result<IEnumerable<OrganizationDetailsViewModel>>> GetListAsync()
     {
         var url = $"/aggregator/organizations";
-        return await _httpClientService.GetAsync<IEnumerable<OrganizationDetailsViewModel>>(url);
+        return await HttpClientService.GetAsync<IEnumerable<OrganizationDetailsViewModel>>(url);
     }
 
     /// <summary>
@@ -47,7 +47,7 @@ public class OrganizationApiService : BaseApiService
     public async Task<Result<IEnumerable<SelectListItem>>> GetSelectListItemsAsync()
     {
         var url = $"/owners-read/organizations";
-        var organizationsResult = await _httpClientService.GetAsync<IEnumerable<GetOrganizationDto>>(url);
+        var organizationsResult = await HttpClientService.GetAsync<IEnumerable<GetOrganizationDto>>(url);
         if (!organizationsResult.IsSuccess)
             return Result.Failure<IEnumerable<SelectListItem>>(organizationsResult.Errors, organizationsResult.Message);
 
@@ -61,7 +61,7 @@ public class OrganizationApiService : BaseApiService
     public async Task<Result<CommandResult>> AddAsync(AddOrganizationDto input)
     {
         var url = $"/owners-write/organizations";
-        return await _httpClientService.PostAsync<CommandResult>(url, input);
+        return await HttpClientService.PostAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -70,7 +70,7 @@ public class OrganizationApiService : BaseApiService
     public async Task<Result<CommandResult>> UpdateAsync(string id, UpdateOrganizationDto input)
     {
         var url = $"/owners-write/organizations/{id}";
-        return await _httpClientService.PutAsync<CommandResult>(url, input);
+        return await HttpClientService.PutAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -79,7 +79,7 @@ public class OrganizationApiService : BaseApiService
     public async Task<Result<CommandResult>> DeleteAsync(string id)
     {
         var url = $"/owners-write/organizations/{id}";
-        return await _httpClientService.DeleteAsync<CommandResult>(url);
+        return await HttpClientService.DeleteAsync<CommandResult>(url);
     }
 
     #endregion

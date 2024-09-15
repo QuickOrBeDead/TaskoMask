@@ -24,6 +24,6 @@ public class UpdateOwnerProfileEndpoint : BaseApiController
     [Route("owner")]
     public async Task<Result<CommandResult>> Put([FromBody] UpdateOwnerProfileDto input)
     {
-        return await _inMemoryBus.SendCommand<UpdateOwnerProfileRequest>(new(id: input.Id, displayName: input.DisplayName, email: input.Email));
+        return await InMemoryBus.SendCommand<UpdateOwnerProfileRequest>(new(id: input.Id, displayName: input.DisplayName, email: input.Email));
     }
 }

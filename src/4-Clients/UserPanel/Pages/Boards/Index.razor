@@ -64,7 +64,7 @@ else if (Model!=null)
 
         var boardDetailsListResult = await BoardApiService.GetDetailsAsync(BoardId);
         if (!boardDetailsListResult.IsSuccess)
-            ToastService.ShowError(boardDetailsListResult.Errors.ParseToFragment(), boardDetailsListResult.Message);
+            ToastService.ShowError(boardDetailsListResult.Errors.ParseToFragment());
         else
             Model = boardDetailsListResult.Value;
 

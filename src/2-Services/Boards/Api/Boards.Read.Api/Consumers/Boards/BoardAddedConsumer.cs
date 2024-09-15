@@ -16,7 +16,7 @@ public class BoardAddedConsumer : BaseConsumer<BoardAdded>
 {
     private readonly BoardReadDbContext _boardReadDbContext;
     private readonly GetProjectByIdGrpcServiceClient _getProjectByIdGrpcServiceClient;
-    protected readonly IMapper _mapper;
+    private readonly IMapper _mapper;
 
     public BoardAddedConsumer(
         IInMemoryBus inMemoryBus,

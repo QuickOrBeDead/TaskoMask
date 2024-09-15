@@ -40,7 +40,7 @@ public class GetCardsByBoardIdHandler : BaseQueryHandler, IRequestHandler<GetCar
     {
         var cards = await _boardReadDbContext.Cards.AsQueryable().Where(o => o.BoardId == request.BoardId).ToListAsync(cancellationToken);
 
-        return _mapper.Map<IEnumerable<GetCardDto>>(cards);
+        return Mapper.Map<IEnumerable<GetCardDto>>(cards);
     }
 
     #endregion

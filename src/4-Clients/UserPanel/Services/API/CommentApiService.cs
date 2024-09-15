@@ -27,7 +27,7 @@ public class CommentApiService : BaseApiService
     public async Task<Result<GetCommentDto>> GetAsync(string id)
     {
         var url = $"/comments/{id}";
-        return await _httpClientService.GetAsync<GetCommentDto>(url);
+        return await HttpClientService.GetAsync<GetCommentDto>(url);
     }
 
     /// <summary>
@@ -36,7 +36,7 @@ public class CommentApiService : BaseApiService
     public async Task<Result<CommandResult>> AddAsync(AddCommentDto input)
     {
         var url = $"/comments";
-        return await _httpClientService.PostAsync<CommandResult>(url, input);
+        return await HttpClientService.PostAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -45,7 +45,7 @@ public class CommentApiService : BaseApiService
     public async Task<Result<CommandResult>> UpdateAsync(string id, UpdateCommentDto input)
     {
         var url = $"/comments/{id}";
-        return await _httpClientService.PutAsync<CommandResult>(url, input);
+        return await HttpClientService.PutAsync<CommandResult>(url, input);
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class CommentApiService : BaseApiService
     public async Task<Result<CommandResult>> DeleteAsync(string id)
     {
         var url = $"/comments/{id}";
-        return await _httpClientService.DeleteAsync<CommandResult>(url);
+        return await HttpClientService.DeleteAsync<CommandResult>(url);
     }
 
     #endregion

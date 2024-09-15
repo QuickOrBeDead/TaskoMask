@@ -43,7 +43,7 @@ public class GetBoardsByOrganizationIdHandler : BaseQueryHandler, IRequestHandle
             .Where(e => e.OrganizationId == request.OrganizationId)
             .ToListAsync(cancellationToken);
 
-        return _mapper.Map<IEnumerable<GetBoardDto>>(boards);
+        return Mapper.Map<IEnumerable<GetBoardDto>>(boards);
     }
 
     #endregion

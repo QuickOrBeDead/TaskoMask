@@ -25,6 +25,6 @@ public class GetCommentsByTaskIdRestEndpoint : BaseApiController
     [Route("tasks/{taskId}/comments")]
     public async Task<Result<IEnumerable<GetCommentDto>>> Get(string taskId)
     {
-        return await _inMemoryBus.SendQuery(new GetCommentsByTaskIdRequest(taskId));
+        return await InMemoryBus.SendQuery(new GetCommentsByTaskIdRequest(taskId));
     }
 }

@@ -25,6 +25,6 @@ public class GetBoardsByProjectIdRestEndpoint : BaseApiController
     [Route("projects/{projectId}/boards")]
     public async Task<Result<IEnumerable<GetBoardDto>>> Get(string projectId)
     {
-        return await _inMemoryBus.SendQuery(new GetBoardsByProjectIdRequest(projectId));
+        return await InMemoryBus.SendQuery(new GetBoardsByProjectIdRequest(projectId));
     }
 }

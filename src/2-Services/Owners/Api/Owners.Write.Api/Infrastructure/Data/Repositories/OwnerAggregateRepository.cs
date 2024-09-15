@@ -13,7 +13,7 @@ public class OwnerAggregateRepository : MongoDbBaseAggregateRepository<Owner>, I
 {
     #region Fields
 
-    protected readonly IMongoCollection<Owner> _owners;
+    private readonly IMongoCollection<Owner> _owners;
 
     #endregion
 

@@ -24,6 +24,6 @@ public class UpdateCommentEndpoint : BaseApiController
     [Route("comments")]
     public async Task<Result<CommandResult>> Put([FromBody] UpdateCommentDto input)
     {
-        return await _inMemoryBus.SendCommand<UpdateCommentRequest>(new(input.Id, input.Content));
+        return await InMemoryBus.SendCommand<UpdateCommentRequest>(new(input.Id, input.Content));
     }
 }

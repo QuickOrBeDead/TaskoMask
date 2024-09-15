@@ -88,7 +88,7 @@
             NavigationManager.NavigateTo("/");
          }
         else
-            ToastService.ShowError(registerResult.Errors.ParseToFragment(), registerResult.Message);
+            ToastService.ShowError(registerResult.Errors.ParseToFragment());
         IsProcessing = false;
     }
 

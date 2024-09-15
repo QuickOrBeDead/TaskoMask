@@ -40,7 +40,7 @@ public class GetActivitiesByTaskIdHandler : BaseQueryHandler, IRequestHandler<Ge
     {
         var activities = await _taskReadDbContext.Activities.AsQueryable().Where(e => e.TaskId == request.TaskId).ToListAsync(cancellationToken);
 
-        return _mapper.Map<IEnumerable<GetActivityDto>>(activities);
+        return Mapper.Map<IEnumerable<GetActivityDto>>(activities);
     }
 
     #endregion

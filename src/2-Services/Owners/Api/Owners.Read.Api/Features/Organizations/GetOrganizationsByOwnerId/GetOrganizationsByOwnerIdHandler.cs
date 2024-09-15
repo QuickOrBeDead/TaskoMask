@@ -40,7 +40,7 @@ public class GetOrganizationsByOwnerIdHandler : BaseQueryHandler, IRequestHandle
     {
         var organizations = await _ownerReadDbContext.Organizations.AsQueryable().Where(o => o.OwnerId == request.OwnerId).ToListAsync();
 
-        return _mapper.Map<IEnumerable<GetOrganizationDto>>(organizations);
+        return Mapper.Map<IEnumerable<GetOrganizationDto>>(organizations);
     }
 
     #endregion
