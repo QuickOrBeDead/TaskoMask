@@ -23,8 +23,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5019
+          "Host": "owners-write-api",
+          "Port": 443
         }
       ],
       "AuthenticationOptions": {

@@ -9,8 +9,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5027
+          "Host": "tasks-write-api",
+          "Port": 443
         }
       ],
       "AuthenticationOptions": {

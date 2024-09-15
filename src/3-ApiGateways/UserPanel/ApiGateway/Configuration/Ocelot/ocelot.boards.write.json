@@ -9,8 +9,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5023
+          "Host": "boards-write-api",
+          "Port": 443
         }
       ],
       "AuthenticationOptions": {
