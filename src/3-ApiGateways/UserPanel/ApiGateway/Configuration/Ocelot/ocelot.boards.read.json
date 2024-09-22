@@ -9,15 +9,15 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "boards-read-api",
+          "Host": "localhost:5025",
           "Port": 443
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "IdentityApiKey",
         "AllowedScopes": [ "boards.read", "profile", "openid" ]
-      }
-
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
     }
   ]
 }

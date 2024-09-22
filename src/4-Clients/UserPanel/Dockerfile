@@ -1,5 +1,5 @@
 FROM nginx:alpine AS base
-WORKDIR /usr/share/nginx/html
+COPY src/4-Clients/UserPanel/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
@@ -17,7 +17,5 @@ FROM build AS publish
 RUN dotnet publish "src/4-Clients/UserPanel/UserPanel.csproj" -c Release -o /app/publish
 
 FROM base AS final
-WORKDIR /usr/share/nginx/html
-COPY --from=publish /app/publish/wwwroot .
-COPY src/4-Clients/UserPanel/nginx.conf /etc/nginx/nginx.conf
+COPY --from=publish /app/publish/wwwroot /usr/share/nginx/html
 CMD ["nginx", "-g", "daemon off;"]

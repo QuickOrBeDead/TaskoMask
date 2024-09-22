@@ -9,15 +9,15 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "tasks-read-api",
+          "Host": "localhost:5029",
           "Port": 443
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "IdentityApiKey",
         "AllowedScopes": [ "tasks.read", "profile", "openid" ]
-      }
-
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
     }
   ]
 }

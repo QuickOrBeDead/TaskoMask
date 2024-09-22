@@ -23,14 +23,15 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "owners-write-api",
+          "Host": "localhost:5019",
           "Port": 443
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "IdentityApiKey",
         "AllowedScopes": [ "owners.write", "profile", "openid" ]
-      }
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
     }
   ]
 }

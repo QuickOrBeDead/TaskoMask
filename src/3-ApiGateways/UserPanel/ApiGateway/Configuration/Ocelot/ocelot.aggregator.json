@@ -9,15 +9,15 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "aggregator",
+          "Host": "localhost:5003",
           "Port": 443
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "IdentityApiKey",
         "AllowedScopes": [ "owners.read", "boards.read", "tasks.read", "profile", "openid" ]
-      }
-
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
     }
   ]
 }

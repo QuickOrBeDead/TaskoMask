@@ -9,14 +9,15 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "owners-read-api",
+          "Host": "localhost:5021",
           "Port": 443
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "IdentityApiKey",
         "AllowedScopes": [ "owners.read", "profile", "openid" ]
-      }
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
     }
   ]
 }

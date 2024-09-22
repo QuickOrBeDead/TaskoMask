@@ -9,14 +9,15 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "boards-write-api",
+          "Host": "localhost:5023",
           "Port": 443
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "IdentityApiKey",
         "AllowedScopes": [ "boards.write", "profile", "openid" ]
-      }
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
     }
   ]
 }

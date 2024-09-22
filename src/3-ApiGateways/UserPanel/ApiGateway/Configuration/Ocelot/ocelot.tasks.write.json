@@ -9,14 +9,15 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "tasks-write-api",
+          "Host": "localhost:5027",
           "Port": 443
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "IdentityApiKey",
         "AllowedScopes": [ "tasks.write", "profile", "openid" ]
-      }
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
     }
   ]
 }
