@@ -9,8 +9,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost:5027",
-          "Port": 443
+          "Host": "localhost",
+          "Port": 5027
         }
       ],
       "AuthenticationOptions": {
